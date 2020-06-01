@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:loteria/utils.dart';
 import 'package:loteria/widgets/numbersRow.dart';
 
-class MegaSena extends StatefulWidget {
-  static String routeName = "/mega";
+class Jogo extends StatefulWidget {
+  static String routeName = "/jogo";
 
-  const MegaSena({Key key}) : super(key: key);
+  const Jogo({Key key}) : super(key: key);
 
   @override
-  _MegaSenaState createState() => _MegaSenaState();
+  _JogoState createState() => _JogoState();
 }
 
-class _MegaSenaState extends State<MegaSena> {
+class _JogoState extends State<Jogo> {
   List<int> selectedNumbers;
 
   @override
@@ -40,7 +40,10 @@ class _MegaSenaState extends State<MegaSena> {
                 ),
                 onPressed: () {
                   setState(() {
-                    selectedNumbers = selecionarDezenas(6);
+                    selectedNumbers = selecionarDezenas(
+                      args["amount"],
+                      args["size"],
+                    );
                   });
                 },
                 color: args["color"],

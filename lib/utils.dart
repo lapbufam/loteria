@@ -1,12 +1,12 @@
 import 'dart:math';
 
-List<int> selecionarDezenas(int size) {
+List<int> selecionarDezenas(int amount, int size) {
   Random rand = Random(DateTime.now().second * DateTime.now().hashCode);
   List<int> nums = [];
   int num;
   int i = 0;
-  while (i < size) {
-    num = rand.nextInt(60) + 1;
+  while (i < amount) {
+    num = rand.nextInt(size) + 1;
     print(num);
     if (!nums.contains(num)) {
       nums.add(num);
